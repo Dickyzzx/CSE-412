@@ -1,0 +1,4 @@
+1.配置druid.properties里面的url为你自己的数据库或者直接使用120.55.75.102[我的云数据库]，username为你的数据库用户名一般都是postgres，password为你的数据库密码，configpath为你的initTable.txt 是否初始化数据库表的配置文件路径，sqlpath为你的创建表的table.sql 的文件路径。
+2.在执行之前必须在数据库中创建你需要连接的数据库，配置到druid.properties中的url中。
+3.initTable.txt里面initTable=1的时候是代表你执行java -jar 你的jar文件名 的时候先执行创建表操作，创建完成之后会修改initTable.txt文件里面initTable=2，接下来你要去数据库里面执行trigger.sql里面的内容创建触发器【必须步骤】，接下来你再次去执行java -jar 你得jar文件名的时候直接执行Main.java里面的main函数了，即我写的一个简单的测试用例，里面包含了注册、登录、添加宠物、添加宠物用品、查看添加的宠物列表、查看添加的宠物用品列表、根据宠物名模糊搜索宠物列表、根据宠物用品描述查询宠物用品列表、查看发布表seller_supp的全部记录和自己发布的记录、购买宠物和宠物用品、删除宠物和宠物用品、查看全部的购买记录和自己购买的记录customer_order表。
+4.因为只是一个简单的测试用例，所以我只注册了两个用户一个0001 一个0002。
